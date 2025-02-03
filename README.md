@@ -1,12 +1,11 @@
 ### Hola, I am Dilane Kamga 👋
 
 
-- 🔭 I’m currently working on Spring Boot, Machine learning and Data science
-- 🌱 I’m currently learning React native and angular
-- 👯 I’m looking to collaborate on every project related to Data Science, Full Stack Development and Fintech
-- 🤔 I’m looking for help with React native 
-- 💬 Ask me about Machine learning, Data Science, Full stack development with Spring Boot
-- 📫 How to reach me: LinkedIn -  www.linkedin.com/in/dilane-fogue-kamga - 
+- 🔭 I’m currently working on Java, Spring Boot, Python, FastAPI, Machine learning, Financial Engineering, Data Engineering and Data science
+- 🌱 I’m currently learning MongoDB and AWS
+- 👯 I’m looking to collaborate on every project related to Financial Engineering, Data Science, Machine Learning, Full Stack Development and Fintech 
+- 💬 Ask me about Machine learning, Data Science, Quant, Full stack development with Spring Boot/FastAPI
+- 📫 How to reach me: LinkedIn -  www.linkedin.com/in/dilane-fogue-kamga - where I talk about Quant and Tech
 - 😄 Pronouns: He / His/ Him
 - ⚡ Fun fact: Music, Travel, Movies, Video games
 
