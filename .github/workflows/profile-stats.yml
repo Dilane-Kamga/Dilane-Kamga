@@ -33,5 +33,8 @@ jobs:
           image-file: assets/userstats.svg
           colors: "#0a0f1c #334155 #6366f1 #f59e0b #f1f5f9"
           commit-message: "chore: refresh profile stats card"
+          # Drop the auto language-distribution pie: byte-counting skews toward notebooks
+          # and misrepresents the stack. The README "Tech stack" section covers this intentionally.
+          category-order: "general, repositories, contributions"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
