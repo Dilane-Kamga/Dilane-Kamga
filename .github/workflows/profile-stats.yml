@@ -1,0 +1,37 @@
+# Renders a full GitHub stats card (stats, repositories, contributions, languages)
+# as a static SVG committed to the repo, so it never depends on a live third-party
+# instance at render time (unlike github-readme-stats.vercel.app, which is regularly
+# paused / rate-limited). Works with the built-in GITHUB_TOKEN for public stats — no
+# personal access token needed. Themed to the brand palette via the `colors` input:
+#   background  border   icon     title    text
+#   #0a0f1c     #334155  #6366f1  #f59e0b  #f1f5f9
+name: Profile stats card
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * *" # daily refresh (~06:17 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-stats
+  cancel-in-progress: true
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate stats card
+        uses: cicirello/user-statistician@v1
+        with:
+          image-file: assets/userstats.svg
+          colors: "#0a0f1c #334155 #6366f1 #f59e0b #f1f5f9"
+          commit-message: "chore: refresh profile stats card"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
