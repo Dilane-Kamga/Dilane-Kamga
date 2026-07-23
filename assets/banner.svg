@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="Dilane Fogue Kamga — Forward-Deployed AI Engineer, Agentic AI in production">
+  <title>Dilane Fogué Kamga — Forward-Deployed AI Engineer · Agentic AI in production</title>
+
+  <defs>
+    <!-- Brand color + type system -->
+    <style>
+      .title { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+      .body  { font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+      .mono  { font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+    </style>
+
+    <!-- Rounded-card clip so glows and grid never bleed past the corners -->
+    <clipPath id="card">
+      <rect x="1" y="1" width="1278" height="358" rx="18" ry="18"/>
+    </clipPath>
+
+    <!-- Corner glows -->
+    <radialGradient id="glowIndigo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#6366f1" stop-opacity="0.38"/>
+      <stop offset="55%" stop-color="#6366f1" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#f59e0b" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#f59e0b" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Indigo -> amber accent rule -->
+    <linearGradient id="rule" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Faint technical grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#334155" stroke-width="1" stroke-opacity="0.16"/>
+    </pattern>
+  </defs>
+
+  <!-- Card background -->
+  <g clip-path="url(#card)">
+    <rect x="0" y="0" width="1280" height="360" fill="#0a0f1c"/>
+    <rect x="0" y="0" width="1280" height="360" fill="url(#grid)"/>
+    <ellipse cx="240" cy="60"  rx="520" ry="380" fill="url(#glowIndigo)"/>
+    <ellipse cx="1080" cy="330" rx="480" ry="360" fill="url(#glowAmber)"/>
+
+    <!-- Terminal chrome dots (subtle nod to "code that ships") -->
+    <g transform="translate(44,40)">
+      <circle cx="0"  cy="0" r="6" fill="#ef4444" fill-opacity="0.55"/>
+      <circle cx="22" cy="0" r="6" fill="#f59e0b" fill-opacity="0.65"/>
+      <circle cx="44" cy="0" r="6" fill="#10b981" fill-opacity="0.65"/>
+    </g>
+    <text x="1236" y="46" text-anchor="end" class="mono" font-size="14" letter-spacing="1.5"
+          fill="#475569">~/production $ deploy --agents</text>
+
+    <!-- Eyebrow: senior credential signal -->
+    <text x="640" y="132" text-anchor="middle" class="mono" font-size="16" letter-spacing="4" fill="#94a3b8">
+      6&#215; AWS<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>2&#215; GCP<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>AWS AI SME
+    </text>
+
+    <!-- Name -->
+    <text x="640" y="205" text-anchor="middle" class="title" font-size="66" font-weight="700"
+          letter-spacing="-1" fill="#f1f5f9">Dilane Fogué Kamga</text>
+
+    <!-- Subtitle -->
+    <text x="640" y="250" text-anchor="middle" class="body" font-size="24" font-weight="500" fill="#94a3b8">
+      Forward-Deployed AI Engineer<tspan fill="#64748b">&#160;&#160;&#183;&#160;&#160;</tspan><tspan fill="#818cf8">Agentic AI </tspan><tspan fill="#fbbf24">in production</tspan>
+    </text>
+
+    <!-- Accent rule -->
+    <rect x="560" y="280" width="160" height="4" rx="2" fill="url(#rule)"/>
+
+    <!-- Card border, drawn last so it sits on top -->
+    <rect x="1" y="1" width="1278" height="358" rx="18" ry="18" fill="none" stroke="#334155" stroke-width="1.5"/>
+  </g>
+</svg>
