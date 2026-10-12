@@ -1,11 +1,13 @@
-# Renders a full GitHub stats card (stats, repositories, contributions, languages)
-# as a static SVG committed to the repo, so it never depends on a live third-party
-# instance at render time (unlike github-readme-stats.vercel.app, which is regularly
-# paused / rate-limited). Works with the built-in GITHUB_TOKEN for public stats — no
-# personal access token needed. Themed to the brand palette via the `colors` input:
-#   background  border   icon     title    text
-#   #0a0f1c     #334155  #6366f1  #f59e0b  #f1f5f9
-name: Profile stats card
+# Renders the profile activity card (assets/activity.svg) with scripts/render_activity.py
+# (Python standard library only, no third-party action or live service) and commits it,
+# so the README never depends on an external instance at render time. Uses the built-in
+# GITHUB_TOKEN; no personal access token needed.
+#
+# Private repositories are counted in the totals but never named: the script keeps public
+# repositories only in its per-repository list, and the unit tests run first to hold that.
+# If the API errors or answers incompletely, the script exits non-zero without writing and
+# the previous card stays in place.
+name: Profile activity card
 
 on:
   push:
@@ -22,19 +24,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  stats:
+  card:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate stats card
-        uses: cicirello/user-statistician@v1
-        with:
-          image-file: assets/userstats.svg
-          colors: "#0a0f1c #334155 #6366f1 #f59e0b #f1f5f9"
-          commit-message: "chore: refresh profile stats card"
-          # Drop the auto language-distribution pie: byte-counting skews toward notebooks
-          # and misrepresents the stack. The README "Tech stack" section covers this intentionally.
-          category-order: "general, repositories, contributions"
+      - name: Test the renderer
+        run: python3 -I scripts/test_render_activity.py
+
+      - name: Render the activity card
+        run: python3 -I scripts/render_activity.py --login Dilane-Kamga --out assets/activity.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit the card if it changed
+        run: |
+          git add assets/activity.svg
+          if git diff --cached --quiet; then
+            echo "Card unchanged, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh profile activity card"
+          git push
