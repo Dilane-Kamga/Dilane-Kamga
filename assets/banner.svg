@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="Dilane Fogue Kamga — Forward-Deployed AI Engineer, Agentic AI in production">
-  <title>Dilane Fogué Kamga — Forward-Deployed AI Engineer · Agentic AI in production</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="Dilane Fogué Kamga, Senior Software &amp; AI Engineer (Forward-Deployed). Agentic AI in production.">
+  <title>Dilane Fogué Kamga, Senior Software &amp; AI Engineer (Forward-Deployed). Agentic AI in production.</title>
 
   <defs>
     <!-- Brand color + type system -->
@@ -56,7 +56,7 @@
 
     <!-- Eyebrow: senior credential signal -->
     <text x="640" y="132" text-anchor="middle" class="mono" font-size="16" letter-spacing="4" fill="#94a3b8">
-      6&#215; AWS<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>2&#215; GCP<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>AWS AI SME
+      7&#215; AWS<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>4&#215; CLAUDE<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>2&#215; GCP
     </text>
 
     <!-- Name -->
@@ -65,7 +65,7 @@
 
     <!-- Subtitle -->
     <text x="640" y="250" text-anchor="middle" class="body" font-size="24" font-weight="500" fill="#94a3b8">
-      Forward-Deployed AI Engineer<tspan fill="#64748b">&#160;&#160;&#183;&#160;&#160;</tspan><tspan fill="#818cf8">Agentic AI </tspan><tspan fill="#fbbf24">in production</tspan>
+      Senior Software &amp; AI Engineer (Forward-Deployed)<tspan fill="#64748b">&#160;&#160;&#183;&#160;&#160;</tspan><tspan fill="#818cf8">Agentic AI </tspan><tspan fill="#fbbf24">in production</tspan>
     </text>
 
     <!-- Accent rule -->
