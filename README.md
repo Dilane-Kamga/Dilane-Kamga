@@ -22,24 +22,32 @@
 
 ## Certifications
 
-**Claude (Anthropic) ×4**, each valid for 12 months<br>
-→ Claude Certified Architect - Professional (CCAR-P)<br>
-→ Claude Certified Architect - Foundations (CCAR-F)<br>
-→ Claude Certified Developer - Foundations (CCDV-F)<br>
-→ Claude Certified Associate - Foundations (CCAO-F)
+<!-- Badges are the official Credly images, stored in assets/badges/; each one links to its Credly verification page. -->
 
-**AWS ×7**<br>
-→ AWS Certified AI Business Strategist ([verify on Credly](https://www.credly.com/badges/d0eea586-310e-42de-b162-6bca334f32bc/public_url))<br>
-→ AWS Certified Machine Learning Engineer - Associate<br>
-→ AWS Certified Data Engineer - Associate<br>
-→ AWS Certified Developer - Associate<br>
-→ AWS Certified Solutions Architect - Associate<br>
-→ AWS Certified AI Practitioner<br>
-→ AWS Certified Cloud Practitioner
+<p align="center">
+  <a href="https://www.credly.com/badges/be02a86b-af0b-4862-8e36-a34728f7ce2c/public_url"><img src="./assets/badges/ccar-p.png" width="104" alt="Claude Certified Architect - Professional" title="Claude Certified Architect - Professional" /></a>
+  <a href="https://www.credly.com/badges/7cccca6d-e806-45bc-9648-a79fca2bd458/public_url"><img src="./assets/badges/ccar-f.png" width="104" alt="Claude Certified Architect - Foundations" title="Claude Certified Architect - Foundations" /></a>
+  <a href="https://www.credly.com/badges/7831c9f3-98e1-4033-80e2-f513f55d2b79/public_url"><img src="./assets/badges/ccdv-f.png" width="104" alt="Claude Certified Developer - Foundations" title="Claude Certified Developer - Foundations" /></a>
+  <a href="https://www.credly.com/badges/80a6df0f-b845-438d-ad56-a1dc92f09105/public_url"><img src="./assets/badges/ccao-f.png" width="104" alt="Claude Certified Associate - Foundations" title="Claude Certified Associate - Foundations" /></a>
+</p>
+<p align="center"><sub><b>Claude ×4</b> (Anthropic), each valid for 12 months</sub></p>
 
-**Google Cloud ×2**<br>
-→ Generative AI Leader<br>
-→ Cloud Digital Leader
+<p align="center">
+  <a href="https://www.credly.com/badges/d0eea586-310e-42de-b162-6bca334f32bc/public_url"><img src="./assets/badges/aws-aib.png" width="104" alt="AWS Certified AI Business Strategist" title="AWS Certified AI Business Strategist" /></a>
+  <a href="https://www.credly.com/badges/643bcb5e-e2ad-44d5-8b79-ea0115164bf6/public_url"><img src="./assets/badges/aws-mle.png" width="104" alt="AWS Certified Machine Learning Engineer - Associate" title="AWS Certified Machine Learning Engineer - Associate" /></a>
+  <a href="https://www.credly.com/badges/3c94d39e-88ad-4d43-883f-7a5d24202552/public_url"><img src="./assets/badges/aws-dea.png" width="104" alt="AWS Certified Data Engineer - Associate" title="AWS Certified Data Engineer - Associate" /></a>
+  <a href="https://www.credly.com/badges/e6af41d0-42ad-4d10-b69d-463b5ab49595/public_url"><img src="./assets/badges/aws-dva.png" width="104" alt="AWS Certified Developer - Associate" title="AWS Certified Developer - Associate" /></a>
+  <a href="https://www.credly.com/badges/b7712add-2435-4375-9822-8657bb7277f1/public_url"><img src="./assets/badges/aws-saa.png" width="104" alt="AWS Certified Solutions Architect - Associate" title="AWS Certified Solutions Architect - Associate" /></a>
+  <a href="https://www.credly.com/badges/1d2d4acf-fff5-44be-bc4c-5143e40b8beb/public_url"><img src="./assets/badges/aws-aif.png" width="104" alt="AWS Certified AI Practitioner" title="AWS Certified AI Practitioner" /></a>
+  <a href="https://www.credly.com/badges/1265eca1-4d18-46d3-9bfc-797c6250c618/public_url"><img src="./assets/badges/aws-clf.png" width="104" alt="AWS Certified Cloud Practitioner" title="AWS Certified Cloud Practitioner" /></a>
+</p>
+<p align="center"><sub><b>AWS ×7</b></sub></p>
+
+<p align="center">
+  <a href="https://www.credly.com/badges/e7ac9fff-b91e-410b-a57a-a3dab0960975/public_url"><img src="./assets/badges/gcp-gail.png" width="104" alt="Google Cloud Generative AI Leader" title="Google Cloud Generative AI Leader" /></a>
+  <a href="https://www.credly.com/badges/e4df3e36-0e84-4722-a0b4-43c8eed7cf25/public_url"><img src="./assets/badges/gcp-cdl.png" width="104" alt="Google Cloud Digital Leader" title="Google Cloud Digital Leader" /></a>
+</p>
+<p align="center"><sub><b>Google Cloud ×2</b></sub></p>
 
 ## Tech stack
 

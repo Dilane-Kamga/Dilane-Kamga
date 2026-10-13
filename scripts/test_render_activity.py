@@ -160,6 +160,15 @@ class RenderSvgTest(unittest.TestCase):
         self.assertNotIn("x" * 60, visible)
         self.assertIn("x" * 25 + "…", visible)
 
+    def test_bars_animate_and_honour_reduced_motion(self):
+        svg = self.render()
+        root = ET.fromstring(svg)
+        bars = [p for p in root.iter("{http://www.w3.org/2000/svg}path") if p.get("class") == "bar"]
+        self.assertEqual(len(bars), 4)
+        delays = [p.get("style") for p in bars]
+        self.assertEqual(len(set(delays)), 4, "each bar starts at its own delay")
+        self.assertIn("@media (prefers-reduced-motion: reduce)", svg)
+
     def test_no_public_commits_still_renders(self):
         svg = self.render(response(repos=[repo("client-secret-repo", 9, private=True)]))
         ET.fromstring(svg)

@@ -7,7 +7,38 @@
       .title { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
       .body  { font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
       .mono  { font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+
+      /* Motion. Base styles are the final state: with reduced motion, or a renderer without CSS
+         animation, the banner is simply static. Entrance plays once; only the cursor and the glows loop. */
+      .rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+      .d1 { animation-delay: 0.1s; }
+      .d2 { animation-delay: 0.3s; }
+      .d3 { animation-delay: 0.5s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+
+      .rule { transform-box: fill-box; transform-origin: center; animation: grow 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.8s both; }
+      @keyframes grow { from { transform: scaleX(0); } }
+
+      .glow { animation: breathe 7s ease-in-out infinite alternate; }
+      .glow-late { animation-delay: -3.5s; }
+      @keyframes breathe { from { opacity: 0.65; } to { opacity: 1; } }
+
+      /* Typed prompt: 30 characters, textLength 297, so one step reveals one character. */
+      .typing { transform-box: fill-box; transform-origin: left center; animation: type 2.1s steps(30) 1.2s both; }
+      @keyframes type { from { transform: scaleX(0); } }
+      .cursor { animation: follow 2.1s steps(30) 1.2s both, blink 1.1s step-end 3.3s infinite; }
+      @keyframes follow { from { transform: translateX(-297px); } }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      @media (prefers-reduced-motion: reduce) {
+        .rise, .rule, .glow, .typing, .cursor { animation: none; }
+      }
     </style>
+
+    <!-- Reveals the prompt one character at a time -->
+    <clipPath id="typed">
+      <rect class="typing" x="930" y="28" width="297" height="26"/>
+    </clipPath>
 
     <!-- Rounded-card clip so glows and grid never bleed past the corners -->
     <clipPath id="card">
@@ -42,8 +73,8 @@
   <g clip-path="url(#card)">
     <rect x="0" y="0" width="1280" height="360" fill="#0a0f1c"/>
     <rect x="0" y="0" width="1280" height="360" fill="url(#grid)"/>
-    <ellipse cx="240" cy="60"  rx="520" ry="380" fill="url(#glowIndigo)"/>
-    <ellipse cx="1080" cy="330" rx="480" ry="360" fill="url(#glowAmber)"/>
+    <ellipse class="glow" cx="240" cy="60"  rx="520" ry="380" fill="url(#glowIndigo)"/>
+    <ellipse class="glow glow-late" cx="1080" cy="330" rx="480" ry="360" fill="url(#glowAmber)"/>
 
     <!-- Terminal chrome dots (subtle nod to "code that ships") -->
     <g transform="translate(44,40)">
@@ -51,25 +82,26 @@
       <circle cx="22" cy="0" r="6" fill="#f59e0b" fill-opacity="0.65"/>
       <circle cx="44" cy="0" r="6" fill="#10b981" fill-opacity="0.65"/>
     </g>
-    <text x="1236" y="46" text-anchor="end" class="mono" font-size="14" letter-spacing="1.5"
-          fill="#475569">~/production $ deploy --agents</text>
+    <text x="930" y="46" class="mono" font-size="14" textLength="297" lengthAdjust="spacing"
+          fill="#475569" clip-path="url(#typed)">~/production $ deploy --agents</text>
+    <rect class="cursor" x="1229" y="34" width="8" height="15" rx="1" fill="#f59e0b" fill-opacity="0.8"/>
 
     <!-- Eyebrow: senior credential signal -->
-    <text x="640" y="132" text-anchor="middle" class="mono" font-size="16" letter-spacing="4" fill="#94a3b8">
+    <text x="640" y="132" text-anchor="middle" class="mono rise d1" font-size="16" letter-spacing="4" fill="#94a3b8">
       7&#215; AWS<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>4&#215; CLAUDE<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>2&#215; GCP
     </text>
 
     <!-- Name -->
-    <text x="640" y="205" text-anchor="middle" class="title" font-size="66" font-weight="700"
+    <text x="640" y="205" text-anchor="middle" class="title rise d2" font-size="66" font-weight="700"
           letter-spacing="-1" fill="#f1f5f9">Dilane Fogué Kamga</text>
 
     <!-- Subtitle -->
-    <text x="640" y="250" text-anchor="middle" class="body" font-size="24" font-weight="500" fill="#94a3b8">
+    <text x="640" y="250" text-anchor="middle" class="body rise d3" font-size="24" font-weight="500" fill="#94a3b8">
       Senior Software &amp; AI Engineer (Forward-Deployed)<tspan fill="#64748b">&#160;&#160;&#183;&#160;&#160;</tspan><tspan fill="#818cf8">Agentic AI </tspan><tspan fill="#fbbf24">in production</tspan>
     </text>
 
     <!-- Accent rule -->
-    <rect x="560" y="280" width="160" height="4" rx="2" fill="url(#rule)"/>
+    <rect class="rule" x="560" y="280" width="160" height="4" rx="2" fill="url(#rule)"/>
 
     <!-- Card border, drawn last so it sits on top -->
     <rect x="1" y="1" width="1278" height="358" rx="18" ry="18" fill="none" stroke="#334155" stroke-width="1.5"/>

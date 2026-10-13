@@ -122,12 +122,13 @@ def _commits(n):
     return f"{n:,} commit" + ("" if n == 1 else "s")
 
 
-def _bar(x, y, width, height, radius=4):
+def _bar(x, y, width, height, delay, radius=4):
     """Horizontal bar anchored on the baseline at x, rounded at the data end only."""
     r = min(radius, width / 2, height / 2)
     end = x + width
     return (
-        f'<path d="M{x} {y}H{end - r:.1f}A{r:.1f} {r:.1f} 0 0 1 {end:.1f} {y + r:.1f}'
+        f'<path class="bar" style="animation-delay: {delay:.2f}s" '
+        f'd="M{x} {y}H{end - r:.1f}A{r:.1f} {r:.1f} 0 0 1 {end:.1f} {y + r:.1f}'
         f'V{y + height - r:.1f}A{r:.1f} {r:.1f} 0 0 1 {end - r:.1f} {y + height}H{x}Z" fill="{INDIGO}"/>'
     )
 
@@ -146,10 +147,12 @@ def render_svg(model, as_of):
     for i, r in enumerate(repos):
         y = row_top + i * row_step
         width = max(2, round(bar_max * r["commits"] / top))
+        delay = 0.3 + i * 0.12
         rows.append(
             f'<text x="352" y="{y}" class="body" font-size="14" fill="{TEXT}">{escape(_short(r["label"]))}</text>\n'
-            f"    {_bar(bar_x, y - 11, width, 12)}\n"
-            f'    <text x="820" y="{y}" text-anchor="end" class="mono" font-size="13" fill="{MUTED}">{_commits(r["commits"])}</text>'
+            f"    {_bar(bar_x, y - 11, width, 12, delay)}\n"
+            f'    <text x="820" y="{y}" text-anchor="end" class="mono fade" style="animation-delay: {delay + 0.5:.2f}s" '
+            f'font-size="13" fill="{MUTED}">{_commits(r["commits"])}</text>'
         )
     if not rows:
         rows.append(
@@ -168,16 +171,28 @@ def render_svg(model, as_of):
     .title {{ font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }}
     .body  {{ font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }}
     .mono  {{ font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }}
+    /* Entrance only, played once. Base styles are the final state, so reduced motion shows a static card. */
+    .bar  {{ transform-box: fill-box; transform-origin: left center; animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }}
+    .fade {{ animation: fade 0.8s ease-out both; }}
+    @keyframes grow {{ from {{ transform: scaleX(0); }} }}
+    @keyframes fade {{ from {{ opacity: 0; }} }}
+    @media (prefers-reduced-motion: reduce) {{
+      .bar, .fade {{ animation: none; }}
+    }}
   </style>
 
   <rect x="0.75" y="0.75" width="858.5" height="258.5" rx="14" fill="{BG}" stroke="{BORDER}" stroke-width="1.5"/>
 
   <!-- Totals -->
-  <text x="40" y="96" class="title" font-size="56" font-weight="700" fill="{TEXT}">{total:,}</text>
-  <text x="40" y="124" class="body" font-size="15" fill="{MUTED}">contributions in the last 12 months</text>
+  <g class="fade">
+    <text x="40" y="96" class="title" font-size="56" font-weight="700" fill="{TEXT}">{total:,}</text>
+    <text x="40" y="124" class="body" font-size="15" fill="{MUTED}">contributions in the last 12 months</text>
+  </g>
   <rect x="40" y="146" width="48" height="3" rx="1.5" fill="{AMBER}"/>
-  <text x="40" y="190" class="title" font-size="34" font-weight="700" fill="{TEXT}">{private:,}</text>
-  <text x="40" y="214" class="body" font-size="15" fill="{MUTED}">in private repositories</text>
+  <g class="fade" style="animation-delay: 0.25s">
+    <text x="40" y="190" class="title" font-size="34" font-weight="700" fill="{TEXT}">{private:,}</text>
+    <text x="40" y="214" class="body" font-size="15" fill="{MUTED}">in private repositories</text>
+  </g>
 
   <line x1="320" y1="40" x2="320" y2="220" stroke="{BORDER}" stroke-width="1"/>
 

@@ -5,16 +5,28 @@
     .title { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
     .body  { font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
     .mono  { font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+    /* Entrance only, played once. Base styles are the final state, so reduced motion shows a static card. */
+    .bar  { transform-box: fill-box; transform-origin: left center; animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+    .fade { animation: fade 0.8s ease-out both; }
+    @keyframes grow { from { transform: scaleX(0); } }
+    @keyframes fade { from { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .bar, .fade { animation: none; }
+    }
   </style>
 
   <rect x="0.75" y="0.75" width="858.5" height="258.5" rx="14" fill="#0a0f1c" stroke="#334155" stroke-width="1.5"/>
 
   <!-- Totals -->
-  <text x="40" y="96" class="title" font-size="56" font-weight="700" fill="#f1f5f9">504</text>
-  <text x="40" y="124" class="body" font-size="15" fill="#94a3b8">contributions in the last 12 months</text>
+  <g class="fade">
+    <text x="40" y="96" class="title" font-size="56" font-weight="700" fill="#f1f5f9">504</text>
+    <text x="40" y="124" class="body" font-size="15" fill="#94a3b8">contributions in the last 12 months</text>
+  </g>
   <rect x="40" y="146" width="48" height="3" rx="1.5" fill="#f59e0b"/>
-  <text x="40" y="190" class="title" font-size="34" font-weight="700" fill="#f1f5f9">398</text>
-  <text x="40" y="214" class="body" font-size="15" fill="#94a3b8">in private repositories</text>
+  <g class="fade" style="animation-delay: 0.25s">
+    <text x="40" y="190" class="title" font-size="34" font-weight="700" fill="#f1f5f9">398</text>
+    <text x="40" y="214" class="body" font-size="15" fill="#94a3b8">in private repositories</text>
+  </g>
 
   <line x1="320" y1="40" x2="320" y2="220" stroke="#334155" stroke-width="1"/>
 
@@ -22,17 +34,17 @@
   <text x="352" y="62" class="mono" font-size="12" letter-spacing="1.5" fill="#94a3b8">MOST COMMITS, PUBLIC REPOSITORIES</text>
   <line x1="560" y1="83" x2="560" y2="213" stroke="#334155" stroke-width="1"/>
     <text x="352" y="100" class="body" font-size="14" fill="#f1f5f9">OCPP-Simulator</text>
-    <path d="M560 89H726.0A4.0 4.0 0 0 1 730.0 93.0V97.0A4.0 4.0 0 0 1 726.0 101H560Z" fill="#6366f1"/>
-    <text x="820" y="100" text-anchor="end" class="mono" font-size="13" fill="#94a3b8">73 commits</text>
+    <path class="bar" style="animation-delay: 0.30s" d="M560 89H726.0A4.0 4.0 0 0 1 730.0 93.0V97.0A4.0 4.0 0 0 1 726.0 101H560Z" fill="#6366f1"/>
+    <text x="820" y="100" text-anchor="end" class="mono fade" style="animation-delay: 0.80s" font-size="13" fill="#94a3b8">73 commits</text>
     <text x="352" y="136" class="body" font-size="14" fill="#f1f5f9">WealthPilot (Udacity PM)</text>
-    <path d="M560 125H572.0A4.0 4.0 0 0 1 576.0 129.0V133.0A4.0 4.0 0 0 1 572.0 137H560Z" fill="#6366f1"/>
-    <text x="820" y="136" text-anchor="end" class="mono" font-size="13" fill="#94a3b8">7 commits</text>
+    <path class="bar" style="animation-delay: 0.42s" d="M560 125H572.0A4.0 4.0 0 0 1 576.0 129.0V133.0A4.0 4.0 0 0 1 572.0 137H560Z" fill="#6366f1"/>
+    <text x="820" y="136" text-anchor="end" class="mono fade" style="animation-delay: 0.92s" font-size="13" fill="#94a3b8">7 commits</text>
     <text x="352" y="172" class="body" font-size="14" fill="#f1f5f9">edgar-mcp</text>
-    <path d="M560 161H570.0A4.0 4.0 0 0 1 574.0 165.0V169.0A4.0 4.0 0 0 1 570.0 173H560Z" fill="#6366f1"/>
-    <text x="820" y="172" text-anchor="end" class="mono" font-size="13" fill="#94a3b8">6 commits</text>
+    <path class="bar" style="animation-delay: 0.54s" d="M560 161H570.0A4.0 4.0 0 0 1 574.0 165.0V169.0A4.0 4.0 0 0 1 570.0 173H560Z" fill="#6366f1"/>
+    <text x="820" y="172" text-anchor="end" class="mono fade" style="animation-delay: 1.04s" font-size="13" fill="#94a3b8">6 commits</text>
     <text x="352" y="208" class="body" font-size="14" fill="#f1f5f9">brvm-mcp-server</text>
-    <path d="M560 197H568.0A4.0 4.0 0 0 1 572.0 201.0V205.0A4.0 4.0 0 0 1 568.0 209H560Z" fill="#6366f1"/>
-    <text x="820" y="208" text-anchor="end" class="mono" font-size="13" fill="#94a3b8">5 commits</text>
+    <path class="bar" style="animation-delay: 0.66s" d="M560 197H568.0A4.0 4.0 0 0 1 572.0 201.0V205.0A4.0 4.0 0 0 1 568.0 209H560Z" fill="#6366f1"/>
+    <text x="820" y="208" text-anchor="end" class="mono fade" style="animation-delay: 1.16s" font-size="13" fill="#94a3b8">5 commits</text>
 
   <text x="820" y="244" text-anchor="end" class="mono" font-size="11" fill="#94a3b8">as of 2026-10-13 (UTC)</text>
 </svg>
