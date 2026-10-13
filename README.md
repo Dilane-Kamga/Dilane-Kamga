@@ -15,8 +15,8 @@
 **Senior Software & AI Engineer (Forward-Deployed) at Accenture**, embedded with a Fortune-100 financial-services client. I ship agentic AI into production for regulated finance, and I get the organization to actually adopt it.
 
 → Production agentic systems (**Bedrock**, **Claude**, **Google ADK**, **LangGraph**, **MCP**) on event-driven **Java / Kafka** backbones<br>
-→ **MSc Financial Engineering** (WorldQuant University), now completing a master's in computer science (Big Data, Université Paris 8)<br>
-→ **AWS AI Subject Matter Expert** (helps author AWS AI certification exams) and **Anthropic Subject Matter Expert** (Claude Certification Developer-Professional exam reviewer)<br>
+→ **MSc Financial Engineering** (WorldQuant University), master's in computer science (Big Data, Université Paris 8)<br>
+→ **AWS AI Subject Matter Expert** (helps author AWS AI certification exams) and **Anthropic Subject Matter Expert** (helps author Claude certification exams)<br>
 → I write **Agentic AI Hebdo**: what actually breaks when you ship agents<br>
 → From **Bandjoun, Cameroon**, building in **Mauritius**. Bilingual FR / EN.
 
