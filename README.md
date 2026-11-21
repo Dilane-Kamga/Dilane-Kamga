@@ -14,6 +14,7 @@
 
 **Senior Software & AI Engineer (Forward-Deployed) at Accenture**, embedded with a Fortune-100 financial-services client. I ship agentic AI into production for regulated finance, and I get the organization to actually adopt it.
 
+→ Working on the **AWS** and **Anthropic** **Forward-Deployed Engineering** engagements of **Accenture France & Benelux**<br>
 → Production agentic systems (**Bedrock**, **Claude**, **Google ADK**, **LangGraph**, **MCP**) on event-driven **Java / Kafka** backbones<br>
 → **MSc Financial Engineering** (WorldQuant University), **Master's Degree in Computer Science** (Big Data, Université Paris 8)<br>
 → **AWS AI Subject Matter Expert** (helps author AWS AI certification exams) and **Anthropic Subject Matter Expert** (helps author Claude certification exams)<br>
@@ -25,12 +26,18 @@
 <!-- Badges are the official Credly images, stored in assets/badges/; each one links to its Credly verification page. -->
 
 <p align="center">
+  <a href="https://www.credly.com/badges/37c885c6-7f89-4cc2-abed-3dab6e18dfc8/public_url"><img src="./assets/badges/aws-fde-v.png" width="104" alt="AWS Partner: Forward Deployed Engineer (FDE) - Validated" title="AWS Partner: Forward Deployed Engineer (FDE) - Validated" /></a>
+</p>
+<p align="center"><sub><b>AWS Partner: Forward Deployed Engineer (FDE) – Validated</b>, valid for 12 months</sub></p>
+
+<p align="center">
   <a href="https://www.credly.com/badges/be02a86b-af0b-4862-8e36-a34728f7ce2c/public_url"><img src="./assets/badges/ccar-p.png" width="104" alt="Claude Certified Architect - Professional" title="Claude Certified Architect - Professional" /></a>
+  <a href="https://www.credly.com/badges/3268cafc-c2cc-4154-996b-52edf7092454/public_url"><img src="./assets/badges/ccdv-p.png" width="104" alt="Claude Certified Developer - Professional" title="Claude Certified Developer - Professional" /></a>
   <a href="https://www.credly.com/badges/7cccca6d-e806-45bc-9648-a79fca2bd458/public_url"><img src="./assets/badges/ccar-f.png" width="104" alt="Claude Certified Architect - Foundations" title="Claude Certified Architect - Foundations" /></a>
   <a href="https://www.credly.com/badges/7831c9f3-98e1-4033-80e2-f513f55d2b79/public_url"><img src="./assets/badges/ccdv-f.png" width="104" alt="Claude Certified Developer - Foundations" title="Claude Certified Developer - Foundations" /></a>
   <a href="https://www.credly.com/badges/80a6df0f-b845-438d-ad56-a1dc92f09105/public_url"><img src="./assets/badges/ccao-f.png" width="104" alt="Claude Certified Associate - Foundations" title="Claude Certified Associate - Foundations" /></a>
 </p>
-<p align="center"><sub><b>Claude ×4</b> (Anthropic), each valid for 12 months</sub></p>
+<p align="center"><sub><b>Claude ×5</b> (Anthropic), each valid for 12 months</sub></p>
 
 <p align="center">
   <a href="https://www.credly.com/badges/d0eea586-310e-42de-b162-6bca334f32bc/public_url"><img src="./assets/badges/aws-aib.png" width="104" alt="AWS Certified AI Business Strategist" title="AWS Certified AI Business Strategist" /></a>

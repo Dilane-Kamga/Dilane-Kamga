@@ -88,7 +88,7 @@
 
     <!-- Eyebrow: senior credential signal -->
     <text x="640" y="132" text-anchor="middle" class="mono rise d1" font-size="16" letter-spacing="4" fill="#94a3b8">
-      7&#215; AWS<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>4&#215; CLAUDE<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>2&#215; GCP
+      7&#215; AWS<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>5&#215; CLAUDE<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>2&#215; GCP<tspan fill="#f59e0b">&#160;&#160;&#183;&#160;&#160;</tspan>AWS FDE VALIDATED
     </text>
 
     <!-- Name -->
